@@ -1,5 +1,6 @@
 import { ThemeToggle } from "../componenets/ThemeToggle";
 import { StarBackground } from "@/componenets/StarBackground";
+import { Navbar } from "../componenets/Navbar";
 
 export const Home = () => {
   return (
@@ -10,7 +11,7 @@ export const Home = () => {
       <StarBackground /> 
 
       {/* Navbar */}
-
+      <Navbar />
       {/* Main Content */}
 
       {/* Footer */}
