@@ -4,6 +4,7 @@ import { Navbar } from "../componenets/Navbar";
 import { HeroSection } from "../componenets/HeroSection";
 import { AboutSection } from "../componenets/AboutSection";
 import { SkillsSection } from "../componenets/SkillsSection";
+import { ProjectsSection } from "../componenets/ProjectsSection";
 
 export const Home = () => {
   return (
@@ -20,6 +21,7 @@ export const Home = () => {
         <HeroSection />
         <AboutSection />
         <SkillsSection />
+        <ProjectsSection />
       </main>
 
       {/* Footer */}
