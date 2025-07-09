@@ -5,7 +5,8 @@ import { HeroSection } from "../componenets/HeroSection";
 import { AboutSection } from "../componenets/AboutSection";
 import { SkillsSection } from "../componenets/SkillsSection";
 import { ProjectsSection } from "../componenets/ProjectsSection";
-
+import { ContactSection } from "../componenets/ContactSection";
+import { Footer } from "../componenets/Footer";
 export const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -22,9 +23,12 @@ export const Home = () => {
         <AboutSection />
         <SkillsSection />
         <ProjectsSection />
+        <ContactSection />
       </main>
 
       {/* Footer */}
+      <Footer />
+
     </div>
   );
 }

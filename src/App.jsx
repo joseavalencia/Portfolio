@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { NotFound } from './pages/NotFound';
+import { Toaster } from './componenets/ui/toaster';
 
 function App() {
  
@@ -11,9 +12,9 @@ function App() {
       <Routes>
         <Route index element={<Home />}/>
         <Route path="*" element={<NotFound />} />
-
       </Routes>
      </BrowserRouter>
+     <Toaster />
     </>
   )
 }
