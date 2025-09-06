@@ -14,8 +14,16 @@ export const ContactSection = () => {
         // Submit to Netlify's form endpoint
         const response = await fetch('/', {
           method: 'POST',
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: new URLSearchParams([...formData, ['form-name', 'contact']]).toString()
+          headers: { 
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json"
+          },
+          body: new URLSearchParams({
+            'form-name': 'contact',
+            name: formData.get('name'),
+            email: formData.get('email'),
+            message: formData.get('message')
+          }).toString()
         });
         
         if (response.ok) {
