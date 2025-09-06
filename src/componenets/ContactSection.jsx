@@ -89,8 +89,8 @@ export const ContactSection = () => {
             <form 
               name="contact"
               method="POST"
-              netlify="true"
-              netlify-honeypot="bot-field"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
               action="/success"
               onSubmit={handleSubmit} 
               className="space-y-6"
