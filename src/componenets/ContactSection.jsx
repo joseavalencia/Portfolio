@@ -91,7 +91,7 @@ export const ContactSection = () => {
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="/success"
+              action="/"
               onSubmit={handleSubmit} 
               className="space-y-6"
             > 
