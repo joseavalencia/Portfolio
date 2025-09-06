@@ -5,13 +5,28 @@ import { toast } from "sonner";
 
 export const ContactSection = () => {
   
-    const handleSubmit = (e) => {
-      // The form submission is handled by Netlify
-      // We just need to handle the form reset and show a toast
-      toast.success('Message sent successfully!');
+    const handleSubmit = async (e) => {
+      e.preventDefault();
       
-      // Form will be automatically reset by Netlify after successful submission
-      // No need to manually reset it here
+      const formData = new FormData(e.target);
+      
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        });
+        
+        if (response.ok) {
+          toast.success('Message sent successfully!');
+          e.target.reset(); // Reset the form
+        } else {
+          toast.error('Failed to send message. Please try again.');
+        }
+      } catch (error) {
+        toast.error('Failed to send message. Please try again.');
+        console.error('Form submission error:', error);
+      }
     }
 
   return (
@@ -91,7 +106,6 @@ export const ContactSection = () => {
               method="POST"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
-              action="/"
               onSubmit={handleSubmit} 
               className="space-y-6"
             > 
