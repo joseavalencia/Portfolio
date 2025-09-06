@@ -4,11 +4,10 @@ export const HeroSection = () => {
   return (
     <section 
       id="hero" 
-      className="relative min-h-screen flex flex-col items-center justify-center px-4"
-      
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 py-20"
     > 
       <div className="container max-w-4xl mx-auto text-center z-10">
-        <div className="space-y-6">
+        <div className="space-y-8">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
             <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
             <span className="text-primary opacity-0 animate-fade-in-delay-1">
@@ -21,9 +20,9 @@ export const HeroSection = () => {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I created a website for a tree service company using front-end development, I build this website using React, Tailwind CSS, and Framer Motion. 
+            Front-end focused Software Engineer with full-stack expertise. UCSC Computer Science graduate specializing in modern web applications, while bringing deep knowledge in AI/ML, systems architecture, and innovative technologies. I craft engaging user experiences backed by robust engineering principles.
           </p>
-          <div className="pt-4 opacity-0 animate-fade-in-delay-4"> 
+          <div className="pt-8 opacity-0 animate-fade-in-delay-4"> 
             <a href="#projects" className="cosmic-button">
               View My Work
             </a>

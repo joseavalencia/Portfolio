@@ -2,7 +2,7 @@ import { Briefcase, Code, User } from "lucide-react";
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="py-24 px-4 relative">
+    <section id="about" className="py-16 px-4 relative">
       {" "}
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
@@ -11,15 +11,11 @@ export const AboutSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center"> 
           <div className="space-y-6"> 
             <h3 className="text-2xl font-semibold"> 
-              Passionate Web Developer & Business Owner
+              Front-End Focused Software Engineer
             </h3>
 
             <p className="text-muted-foreground"> 
-              With over 5 years of experience in web development, I've worked with a wide range of clients, from small businesses to large corporations. I've built websites, web applications, and e-commerce platforms.
-            </p>
-
-            <p className="text-muted-foreground">
-              I'm a passionate web developer with a strong focus on creating user-friendly and efficient websites. I've worked with a wide range of clients, from small businesses to large corporations. I've built websites, web applications, and e-commerce platforms.
+              I'm a Computer Science graduate from UC Santa Cruz, specializing in front-end development while maintaining strong full-stack capabilities. My comprehensive background spans modern web technologies, systems architecture, and emerging tech like AI/ML. I combine academic excellence with practical experience, having built everything from responsive web apps to embedded systems, while also managing digital operations for a successful family business.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -27,55 +23,45 @@ export const AboutSection = () => {
                 {" "}
                 Get in Touch
               </a>
-
-              <a 
-                href="" 
-                className="px-6 py-2 rounded-full border border-primary text-primary hober:bg-primary/10 transition-colors duration-300"
-                download="Jose_Valencia_CV.pdf"
-              >
-                Download CV
-              </a>
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-6">
-            <div className="gradient-border p-6 card-hover">
+            <div className="bg-card border border-border rounded-xl p-6 card-hover shadow-sm">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Code className="h-6 w-6 text-primary" />
                 </div> 
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> Web Development</h4>
+                  <h4 className="font-semibold text-lg">Modern Web Development</h4>
                   <p className="text-muted-foreground">
-                    Creating responsive and user-friendly websites using modern technologies.
+                    Crafting exceptional user experiences with React, Next.js, and modern front-end technologies, while maintaining full-stack proficiency.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="gradient-border p-6 card-hover">
+            <div className="bg-card border border-border rounded-xl p-6 card-hover shadow-sm">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <User className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> UI/UX Design</h4>
+                  <h4 className="font-semibold text-lg">Innovation & Business</h4>
                   <p className="text-muted-foreground">
-                    Designing user-friendly and efficient interfaces for websites and applications.
+                    Bridging technology and business needs through innovative solutions, from AI integration to scalable web applications and digital transformation.
                   </p>
                 </div>
               </div>
             </div>
-            <div className="gradient-border p-6 card-hover">
+            <div className="bg-card border border-border rounded-xl p-6 card-hover shadow-sm">
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-full bg-primary/10">
                   <Briefcase className="h-6 w-6 text-primary" />
                 </div>
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg"> 
-                      Project Management
-                  </h4>
+                  <h4 className="font-semibold text-lg">Engineering Excellence</h4>
                   <p className="text-muted-foreground">
-                    Leading and managing projects to ensure they are completed on time and within budget.
+                    Strong foundation in computer science fundamentals, from algorithms to systems design, complemented by hands-on experience in AI/ML and embedded systems.
                   </p>
                 </div>
               </div>

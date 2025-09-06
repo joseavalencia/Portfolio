@@ -1,5 +1,5 @@
 import {cn} from "@/lib/utils";
-import { X, Menu } from "lucide-react";
+import { X, Menu, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
@@ -13,7 +13,31 @@ const navItems = [
 
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false); // set true when styling done
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(false);
+
+    useEffect(() => {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme === "dark") {
+        setIsDarkMode(true);
+        document.documentElement.classList.add("dark");
+      } else {
+        localStorage.setItem("theme", "light");
+        setIsDarkMode(false);
+      }
+    }, []);
+
+    const toggleTheme = () => {
+      if (isDarkMode) {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+        setIsDarkMode(false);
+      } else {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+        setIsDarkMode(true);
+      }
+    };
 
 
     useEffect (() => {
@@ -32,22 +56,31 @@ export const Navbar = () => {
       <div className="container flex items-center justify-between">
         <a className="text-xl font-bold flex items-center" href="#hero"> 
           <span className="relative z-10">
-            <span className="text-glow text-foreground dark:text-foreground"> JoseTech </span> 
-            <span className="text-primary">Portfolio</span>
+           
+            <span className="text-primary">Jose Valencia</span>
           </span>
         </a>
 
         {/* desktop nav*/} 
-        <div className="hidden md:flex space-x-8">
-          {navItems.map((item, key) => (
+        <div className="hidden md:flex items-center space-x-8">
+          {navItems.map((item) => (
             <a
-              key={key}
+              key={item.name}
               href={item.href}
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
               {item.name}
             </a>
           ))}
+          
+          {/* Desktop Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-full hover:bg-primary/10 transition-colors"
+            aria-label="Toggle theme"
+          >
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
         </div>
 
         {/* mobile nav*/}
@@ -62,24 +95,35 @@ export const Navbar = () => {
 
         <div 
           className={cn(
-            "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
+            "fixed inset-0 bg-gray-700/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden",
             isMenuOpen 
               ? "opacity-100 pointer-events-auto"
               : "opacity-0 pointer-events-none"
           )}
         >
-          <div className="flex flex-col space-y-8 text-xl">
-            {navItems.map((item, key) => (
+          <div className="flex flex-col items-center space-y-8 text-xl">
+            {navItems.map((item) => (
               <a
-                key={key}
+                key={item.name}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                className="text-white hover:text-primary transition-colors duration-300"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </a>
             ))}
+            
+            {/* Mobile Theme Toggle */}
+            <button
+              onClick={() => {
+                toggleTheme();
+                setIsMenuOpen(false);
+              }}
+              className="text-white hover:text-primary transition-colors duration-300"
+            >
+              {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
+            </button>
           </div>
         </div>
       </div>
