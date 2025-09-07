@@ -1,6 +1,14 @@
 import { Briefcase, Code, User } from "lucide-react";
 
 export const AboutSection = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      // Update URL without the hash
+      window.history.pushState({}, "", window.location.pathname);
+    }
+  };
   return (
     <section id="about" className="py-16 px-4 relative">
       {" "}
@@ -19,8 +27,14 @@ export const AboutSection = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a href="#contact" className="cosmic-button"> 
-                {" "}
+              <a 
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('contact');
+                }}
+                className="cosmic-button"
+              > 
                 Get in Touch
               </a>
             </div>

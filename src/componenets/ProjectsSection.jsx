@@ -15,7 +15,7 @@ const projects = [
   {
     id: 2,
     title: "Custom Recipe Manager",
-    description: "A comprehensive full-stack application showcasing database design, API integration, and modern web architecture. Features include user authentication, real-time search, RESTful API endpoints, and third-party service integration. Built with React, Python, and SQL, demonstrating full-stack development capabilities.",
+    description: "Full-stack group project built with React, Python (py4web), and SQLite. Designed and implemented features like user authentication, recipe search, and API integration while collaborating with a team using Git, pull requests, and branching workflows. Gained real-world experience in version control, database design, and full-stack architecture. Source code is private but can be shared with recruiters upon request.",
     image: "/projects/Mealzi.png",
     tags: ["React", "Py4web", "SQLite", "Python", "Node.js", "Tailwind CSS"],
     demoUrl: "https://github.com/joseavalencia",
@@ -27,7 +27,7 @@ const projects = [
     description: "An advanced computer graphics portfolio showcasing expertise in low-level graphics programming. Implements complex rendering algorithms, shader programming, and 3D transformations using WebGL and GLSL. Features interactive demonstrations of graphics concepts, optimized performance, and seamless Three.js integration.",
     image: "/projects/ComputerGraphicProjects.png",
     tags: ["WebGL", "JavaScript", "HTML","CSS", "GLSL Shaders", "Three.js"],
-    demoUrl: "https://github.com/joseavalencia",
+    demoUrl: "https://joseavalencia.github.io/cse160/",
     githubUrl: "https://github.com/joseavalencia",
   },
 ];

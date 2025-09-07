@@ -3,13 +3,21 @@ import { X, Menu, Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const navItems = [
-  {name: "Home", href: "#hero"},
-  {name: "About", href: "#about"},
-  {name: "Skills", href: "#skills"},
-  {name: "Projects", href: "#projects"},
-  {name: "Contact", href: "#contact"},
-
+  {name: "Home", id: "hero"},
+  {name: "About", id: "about"},
+  {name: "Skills", id: "skills"},
+  {name: "Projects", id: "projects"},
+  {name: "Contact", id: "contact"},
 ]
+
+const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+    // Update URL without the hash
+    window.history.pushState({}, "", window.location.pathname);
+  }
+};
 
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -17,13 +25,16 @@ export const Navbar = () => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
-      const storedTheme = localStorage.getItem("theme");
+      // Default to dark mode if no theme is stored
+      const storedTheme = localStorage.getItem("theme") || "dark";
       if (storedTheme === "dark") {
         setIsDarkMode(true);
         document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
       } else {
-        localStorage.setItem("theme", "light");
         setIsDarkMode(false);
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
       }
     }, []);
 
@@ -54,7 +65,14 @@ export const Navbar = () => {
     )} 
     >
       <div className="container flex items-center justify-between">
-        <a className="text-xl font-bold flex items-center" href="#hero"> 
+        <a 
+          className="text-xl font-bold flex items-center" 
+          href="/hero"
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection('hero');
+          }}
+        > 
           <span className="relative z-10">
            
             <span className="text-primary">Jose Valencia</span>
@@ -66,7 +84,11 @@ export const Navbar = () => {
           {navItems.map((item) => (
             <a
               key={item.name}
-              href={item.href}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(item.id);
+              }}
+              href={`/${item.id}`}
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
               {item.name}
@@ -106,9 +128,13 @@ export const Navbar = () => {
             {navItems.map((item) => (
               <a
                 key={item.name}
-                href={item.href}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection(item.id);
+                  setIsMenuOpen(false);
+                }}
+                href={`/${item.id}`}
                 className="text-white hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
               </a>

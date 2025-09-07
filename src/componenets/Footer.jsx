@@ -2,6 +2,14 @@ import { ArrowUp } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+    // Update URL without the hash
+    window.history.pushState({}, "", window.location.pathname);
+  };
   return (
     <footer className="py-12 px-4 bg-card relative border-t border-border mt-12 pt-8">
       <div className="container mx-auto max-w-5xl flex flex-col md:flex-row justify-between items-center gap-4">
@@ -24,12 +32,13 @@ export const Footer = () => {
             </Link>
           </div>
         </div>
-        <a 
-          href="#hero" 
-          className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
+        <button 
+          onClick={scrollToTop}
+          className="p-2 rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-colors cursor-pointer"
+          aria-label="Scroll to top"
         >
           <ArrowUp size={20} />
-        </a>
+        </button>
       </div>
     </footer>
   );
