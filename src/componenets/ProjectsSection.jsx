@@ -9,7 +9,7 @@ const projects = [
     description: "A modern web application built with React, TypeScript, and Tailwind CSS. Features responsive design, dynamic content management, Netlify Forms integration, and optimized performance. Demonstrates expertise in modern front-end architecture and deployment workflows.",
     image: "/projects/CertifiedTreeServiceInc.png",
     tags: ["React", "TypeScript", "Tailwind CSS", "HTML", "JavaScript", "Netlify"],
-    demoUrl: "https://github.com/joseavalencia",
+    demoUrl: "https://certifiedtreeservicesinc.com",
     githubUrl: "https://github.com/joseavalencia",
   },
   {
